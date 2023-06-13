@@ -63,7 +63,7 @@ class IyzicoRequest
 		}
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 0);
-		curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
+		//curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
 		curl_setopt($curl, CURLOPT_TIMEOUT, 150);
 		
 		curl_setopt(        
@@ -71,6 +71,7 @@ class IyzicoRequest
 		        "Authorization: " .$authorizationData['authorization'],
 		        "x-iyzi-rnd:".$authorizationData['rand_value'], 
 		        "Content-Type: application/json",
+			"Accept: application/json"
 		    )
 		);
 
